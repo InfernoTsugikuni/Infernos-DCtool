@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{681423d0-b23f-4f3b-817d-ad14cee1ba31}</ProjectGuid>
+    <RootNamespace>DiscordToolCPP</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\dpp</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ConsoleUtils.cpp" />
+    <ClCompile Include="DiscordToolCPP.cpp" />
+    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="nitro_generator.cpp" />
+    <ClCompile Include="Webhook.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\appcommand.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\application.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\auditlog.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\automod.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\ban.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\bignum.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\cache.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\channel.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\cluster.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\cluster_coro_calls.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\cluster_sync_calls.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\collector.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\colors.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\commandhandler.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\coro.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\coro\async.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\coro\awaitable.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\coro\coro.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\coro\coroutine.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\coro\job.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\coro\task.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\coro\when_any.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\discordclient.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\discordevents.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\discordvoiceclient.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\dispatcher.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\dns.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\dpp.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\dtemplate.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\emoji.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\entitlement.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\etf.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\event.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\event_router.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\exception.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\export.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\guild.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\httpsclient.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\integration.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\intents.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\invite.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\isa\avx.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\isa\avx2.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\isa\avx512.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\isa\fallback.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\isa\neon.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\isa_detection.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\json.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\json_fwd.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\json_interface.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\managed.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\message.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\misc-enum.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\nlohmann\json.hpp" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\nlohmann\json_fwd.hpp" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\once.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\permissions.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\presence.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\prune.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\queues.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\restrequest.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\restresults.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\role.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\scheduled_event.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\sku.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\snowflake.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\socket.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\sslclient.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\stage_instance.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\stringops.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\sync.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\sysdep.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\thread.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\timed_listener.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\timer.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\unicode_emoji.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\user.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\utility.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\version.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\voiceregion.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\voicestate.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\webhook.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\win32_safe_warnings.h" />
+    <ClInclude Include="..\..\..\..\Downloads\libdpp-10.0.35-win64-release-vs2022\libdpp-10.0.35-win64\include\dpp-10.0\dpp\wsclient.h" />
+    <ClInclude Include="ConsoleUtils.h" />
+    <ClInclude Include="curl.h" />
+    <ClInclude Include="curlver.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="easy.h" />
+    <ClInclude Include="Functions.h" />
+    <ClInclude Include="header.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="mprintf.h" />
+    <ClInclude Include="multi.h" />
+    <ClInclude Include="nitro_generator.hpp" />
+    <ClInclude Include="options.h" />
+    <ClInclude Include="stdcheaders.h" />
+    <ClInclude Include="system.h" />
+    <ClInclude Include="typecheck-gcc.h" />
+    <ClInclude Include="urlapi.h" />
+    <ClInclude Include="Webhook.hpp" />
+    <ClInclude Include="websockets.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
