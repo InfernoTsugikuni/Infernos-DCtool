@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/titleBar/Minimize.png</file>
+        <file>images/titleBar/MinimizeHover.png</file>
+        <file>images/titleBar/Close.png</file>
+        <file>images/titleBar/CloseHover.png</file>
+        <file>images/titleBar/TBLabel.png</file>
+        <file>images/titleBar/gitBut.png</file>
+        <file>images/titleBar/gitButHover.png</file>
+        <file>images/titles/homePage.png</file>
+        <file>images/titles/webhook_spammerPage.png</file>
+        <file>images/titles/webhook_messagePage.png</file>
+        <file>images/titles/webhook_checkerPage.png</file>
+        <file>images/titles/nitro_generatorPage.png</file>
+        <file>images/buttons/nitroGen_hover.png</file>
+        <file>images/buttons/nitroGen.png</file>
+        <file>images/buttons/whCheck_hover.png</file>
+        <file>images/buttons/whCheck.png</file>
+        <file>images/buttons/whSend_hover.png</file>
+        <file>images/buttons/whSend.png</file>
+        <file>images/buttons/whSpam_hover.png</file>
+        <file>images/buttons/whSpam.png</file>
+        <file>images/buttons/CheckBut.png</file>
+        <file>images/buttons/CheckButHover.png</file>
+        <file>images/icons/InvalidWh.png</file>
+        <file>images/icons/ValidWh.png</file>
+        <file>images/buttons/btnSend.png</file>
+        <file>images/buttons/btnSendHover.png</file>
+        <file>images/titleBar/homeBut.png</file>
+        <file>images/titleBar/homeButHover.png</file>
+        <file>images/buttons/SpammerButStart.png</file>
+        <file>images/buttons/SpammerButStartHover.png</file>
+        <file>images/buttons/SpammerButStop.png</file>
+        <file>images/buttons/SpammerButStopHover.png</file>
+    </qresource>
+</RCC>
