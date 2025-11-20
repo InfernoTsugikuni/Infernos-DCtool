@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
     // ---------------------------------------- STATUS BAR START ----------------------------------------\\
 
     QString statusTextValue; // This will hold the actual status string like "Operational"
-    QString updatedTextValue = "22. 6. 2025";
+    QString updatedTextValue = "20. 11. 2025";
 
     int currentStatusIndicator = 1; // 1 = Working | 2 = May be broken | 3 = Broken
 
@@ -200,3 +200,4 @@ void MainWindow::paintEvent(QPaintEvent* /*event*/) {
     painter.setPen(borderPen);
     painter.drawPath(fullPath);
 }
+
