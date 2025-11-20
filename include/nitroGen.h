@@ -14,102 +14,105 @@
 #include <QClipboard>
 #include <QApplication>
 #include <QFile>
+#include <QTextStream>
 #include <QMutex>
 #include <QThread>
 #include <QRandomGenerator>
+#include <QWaitCondition>
+#include <QScrollBar>
 
 class NitroGeneratorThread : public QThread {
     Q_OBJECT
 public:
-    NitroGeneratorThread(QObject *parent = nullptr) : QThread(parent), stopFlag(false) {}
-    void run() override {
-        const QString chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        while (!stopFlag.loadAcquire()) {
-            QString code;
-            int codeLength = 16 + (QRandomGenerator::global()->bounded(9));
-            for (int i = 0; i < codeLength; ++i) {
-                int idx = QRandomGenerator::global()->bounded(chars.length());
-                code.append(chars.at(idx));
-            }
-            emit codeGenerated(QString("https://discord.gift/%1").arg(code));
-            // Throttle generation slightly
-            QThread::msleep(20);
-        }
-    }
-    void stop() {
-        stopFlag.storeRelease(true);
-    }
+    explicit NitroGeneratorThread(QObject *parent = nullptr);
+    void run() override;
+    void stop();
+    void setPaused(bool paused);
 
 signals:
     void codeGenerated(const QString &link);
 
 private:
     QBasicAtomicInt stopFlag;
+    QBasicAtomicInt pauseFlag;
 };
 
+// Main Widget Class
 class NitroGen : public QWidget {
     Q_OBJECT
+
 public:
     explicit NitroGen(QWidget *parent = nullptr);
     ~NitroGen();
 
 private slots:
     void handleCommand();
-    void onGenerationTimer();
     void onValidationTimer();
     void onNetworkReply();
-    void onWebhookSendComplete(bool success, const QString &error);
     void onCodeGenerated(const QString &link);
+    void onBrowseClicked();
+    void onCopyClicked();
+    void onSendWebhookClicked();
 
 private:
+    // --- UI Setup ---
     void setupUI();
     void setupStyling();
+
+    // --- Command Processing ---
     void processCommand(const QString &command);
-    void executeGenCommand();
+    void executeGenCommand(int customThreads = -1);
     void executeStopCommand();
     void executeClearCommand();
     void executeHelpCommand();
-    void executeUnknownCommand(const QString &command);
+    void executeSaveCommand();
+    void executeSaveAllCommand();
+
+    // --- Core Logic ---
     void startContinuousGeneration();
     void stopContinuousGeneration();
-    void logToConsole(const QString &message, const QString &prefix);
-    void scrollToBottom();
-    QString getCurrentTimestamp();
-    unsigned int hardwareThreads;
-    unsigned int maxThreads;
-    void displayGeneratedLink(const QString &link, bool isValid=false);
-    void copyToClipboard(const QString &text);
-    void sendToWebhook();
     void validateNitroLink(const QString &link);
-    void saveValidLink(const QString &link);
+    void sendToWebhook(const QString &validLink);
 
-    // UI elements
+    // --- Utilities ---
+    void logToConsole(const QString &message, const QString &prefix = "");
+    void scrollToBottom();
+    void displayGeneratedLink(const QString &link);
+    QString getCurrentTimestamp();
+
+    // --- UI Members ---
     QPlainTextEdit *consoleOutput;
     QLineEdit *commandInput;
     QLabel *generatedLinkLabel;
     QPushButton *copyLinkButton;
     QLineEdit *webhookInput;
-    QPushButton *sendButton;
-    QVBoxLayout *mainLayout;
+    QLineEdit *saveInput;
+    QPushButton *browseButton;
 
-    // Networking
+    // --- Networking ---
     QNetworkAccessManager *networkManager;
 
-    // Generation
+    // --- State & Threading ---
     bool isGenerating;
+    int threadCount;
+    int consecutiveTimeouts;
+    QString saveFilePath;
+    QString lastGeneratedLink;
+
+    // Queues
     QList<QString> pendingValidation;
     QMutex pendingMutex;
     QList<NitroGeneratorThread*> generatorThreads;
-    int threadCount;
-
-    // Timers
     QTimer *validationTimer;
+
+    // Storage
+    QList<QString> validCodes;
+    QList<QString> historyLog;
+    QMutex storageMutex;
 
     // Stats
     qint64 totalGenerated;
     qint64 validLinksFound;
-    QString lastGeneratedLink;
-    QString saveFilePath;
 };
 
 #endif // NITROGEN_H
