@@ -1,6 +1,6 @@
-; NSIS Script for Inferno's DCTool with Dynamic Admin/User Installation Support
+; NSIS Script for Inferno's DCTool
 !define PRODUCT_NAME "Inferno's DCTool"
-!define PRODUCT_VERSION "1.0.1"
+!define PRODUCT_VERSION "1.0.2"
 !define PRODUCT_PUBLISHER "Inferno Tsugikuni"
 !define PRODUCT_WEB_SITE "https://infernotsugikuni.work/multitool"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Infernos_DCTool.exe"
@@ -8,7 +8,7 @@
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
 !define PRODUCT_USER_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 
-; Modern UI
+; UI
 !include "MUI2.nsh"
 !include "LogicLib.nsh"
 !include "FileFunc.nsh"
@@ -25,7 +25,7 @@ Var UserInstallRadio
 ; General
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
 OutFile "InfernosDCTool_Setup.exe"
-InstallDir ""  ; Will be set dynamically
+InstallDir ""  ; 
 ShowInstDetails show
 ShowUnInstDetails show
 
@@ -33,7 +33,7 @@ ShowUnInstDetails show
 SetCompressor /SOLID lzma
 SetCompressorDictSize 32
 
-; Start with user privileges - we'll elevate later if needed
+; Start with user privileges
 RequestExecutionLevel user
 
 ; Interface Settings
@@ -44,7 +44,6 @@ Page custom InstallTypePageCreate InstallTypePageLeave
 
 ; Pages
 !insertmacro MUI_PAGE_WELCOME
-; !insertmacro MUI_PAGE_LICENSE "license.txt"  ; Commented out - create license.txt if needed
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
@@ -141,14 +140,11 @@ Section "MainSection" SEC01
   File "build\Qt6Core.dll"
   File "build\Qt6Gui.dll"
   File "build\Qt6Network.dll"
-  File "build\Qt6Pdf.dll"
   File "build\Qt6Svg.dll"
   File "build\Qt6Widgets.dll"
   
   ; Runtime Libraries
   File "build\libc++.dll"
-  File "build\libgcc_s_seh-1.dll"
-  File "build\libstdc++-6.dll"
   File "build\libunwind.dll"
   File "build\libwinpthread-1.dll"
   
@@ -157,6 +153,8 @@ Section "MainSection" SEC01
   File "build\opengl32sw.dll"
   
   ; Qt Plugins and Resources
+  SetOutPath "$INSTDIR\assets"
+  File /r "build\assets\*.*"
   
   SetOutPath "$INSTDIR\generic"
   File /r "build\generic\*.*"
@@ -291,7 +289,7 @@ FunctionEnd
 
 Function un.onUninstSuccess
   HideWindow
-  MessageBox MB_ICONINFORMATION|MB_OK "$(^Name) was successfully removed from your computer."
+  MessageBox MB_ICONINFORMATION|MB_OK "$(^Name) was successfully removed from your computer." 
 FunctionEnd
 
 Section Uninstall
@@ -305,10 +303,9 @@ Section Uninstall
   Delete "$INSTDIR\Qt6Svg.dll"
   Delete "$INSTDIR\Qt6Widgets.dll"
   Delete "$INSTDIR\libc++.dll"
-  Delete "$INSTDIR\libgcc_s_seh-1.dll"
-  Delete "$INSTDIR\libstdc++-6.dll"
   Delete "$INSTDIR\libunwind.dll"
   Delete "$INSTDIR\libwinpthread-1.dll"
+
   Delete "$INSTDIR\D3Dcompiler_47.dll"
   Delete "$INSTDIR\opengl32sw.dll"
   
